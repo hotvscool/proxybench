@@ -1,0 +1,39 @@
+<html>
+<head>
+	<script src="panel.js"></script>
+	<link rel="stylesheet" href="./assets/material.min.css">
+	<script src="./assets/material.min.js"></script>
+</head>
+<body>
+
+
+	 <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">TCP复用预取测试插件</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+
+        </div>
+      </header>
+
+      <main class="mdl-layout__content">
+        <div class="page-content">
+                  <center>
+                  <h6>本插件将统计页面首字节到达时间和前300（70%）个对象的完成时间。</h6>
+                  <button id="actionButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">测试!</button>
+                  <br>
+
+				<div id="result" style="margin-top: 20px;"></div>
+				</center>
+        
+        <!-- Your content goes here -->
+
+        </div>
+      </main>
+    </div>
+</body>
+</html>
