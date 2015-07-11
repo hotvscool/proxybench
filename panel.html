@@ -1,11 +1,18 @@
 <html>
 <head>
-	<script src="panel.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="./assets/material.min.css">
+	<link rel="stylesheet" href="panel.css">
+
 	<script src="./assets/material.min.js"></script>
+  	<script src="libs/jquery.js"></script>
+	<script src="panel.js"></script>
+	<script type='text/javascript' src='libs/resizable-tables.js'></script>
+
+
+
 </head>
 <body>
-
 
 	 <!-- Always shows a header, even in smaller screens. -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -22,13 +29,50 @@
 
       <main class="mdl-layout__content">
         <div class="page-content">
-                  <center>
-                  <h6>本插件将统计页面首字节到达时间和前300（70%）个对象的完成时间。</h6>
-                  <button id="actionButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">测试!</button>
-                  <br>
+        		<div class="mdl-grid">
+                	<div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col" style="padding: 8px;">
+                	<button id="clearButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">清除记录</button>
+                	<button id="reloadButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">刷新页面</button>
+					 <table id="detailTable" class="resizable" width="100%" border="0" cellpadding="0" cellspacing="0">
+					    <thead>
+					    	<tr>
+						      <th style="width:70%;">URL</th>
+						      <th style="width:10%;">Size</th>
+						      <th style="width:10%;">TTFB</th>
+						      <th style="width:10%;">Time</th>
+					    	</tr>
+					    </thead>
+					    <tbody id="detailBody">
+					    </tbody>
+					</table>
 
-				<div id="result" style="margin-top: 20px;"></div>
-				</center>
+                	</div>
+
+          			<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+          			<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop" style="padding:3px;">
+		                <h6>本插件将统计页面首字节到达时间和前300（70%）个对象的完成时间。</h6>
+
+          				<center>
+		                <button id="actionButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">测试!</button>
+		                <div class="mdl-tooltip mdl-tooltip--large" style="text-align:left;" for="actionButton">
+						请等待页面加载完毕或者页面长时间无新对象加载之后，再点击测试按钮开始测试。
+						</div>
+		                <br>
+
+						<div id="result" style="margin-top: 20px;"></div>
+						<br>
+						<div class="mdl-textfield mdl-js-textfield" style="margin-top: 20px;">
+						<h6>日志</h6>
+		        			<textarea class="mdl-textfield__input" type="text" rows= "10" id="logarea" ></textarea>
+		      			</div>
+						</center>
+					</div>
+
+	     
+          			</div>	
+  				</div>
+
+
         
         <!-- Your content goes here -->
 
